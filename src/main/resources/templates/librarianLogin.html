@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Librarian Login</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="title">
+        Librarian Login
+    </div>
+    <form th:action="@{/librarianLoginSubmit}" method="post" th:object="${librarian}">
+        <div class="field">
+            <input th:field="*{name}" type="text" required>
+            <label>Name</label>
+        </div>
+        <div class="field">
+            <input th:field="*{password}" type="password" required>
+            <label>Password</label>
+        </div>
+        <div class="field">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+</div>
+</body>
+</html>

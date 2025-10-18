@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <!-- Title section -->
+    <div class="title">
+        <a th:href="@{/librarianLogin}" style="text-decoration: none; color: inherit;">Log in</a>
+    </div>
+    <div class="content">
+        <!-- Registration form -->
+        <form method="post" th:action="@{/loginSubmit}" th:object="${member}">
+            <div class="user-details">
+                <!-- Input for Full Name -->
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input th:field="*{name}"  type="text" placeholder="Enter your name" required>
+                </div>
+                <!-- Input for Password -->
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input th:field="*{password}" type="text" placeholder="Enter your password" required>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="button">
+                <input type="submit" value="Log in">
+            </div>
+            <div class="text" style="text-align: center;">
+                <span>
+                    <h4>Don't have an account?
+                        <a th:href="@{/reg}" style="color: blue; text-decoration: underline;">Registration</a>
+                    </h4>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
